@@ -1,15 +1,18 @@
 <template name="home">
-  <div class="container py-6 flex flex-col content-center">
+  <div class="container py-12 flex flex-col content-center">
     {{#if currentUser}}
+      <button id="logout" class="absolute top-3 right-5">Tancar sessió</button>
       <h1 class="text-3xl font-bold self-center">
         Votacions AGO 04/12/20
       </h1>
       <span class="font-medium self-center">
         Colla Castellera de l'Esquerra de l'Eixample
       </span>
-      <div class="grid grid-cols-2 divide-x-2 p-3 my-6">
+      <div class="grid sm:grid-cols-1 {{#if isAdmin}}md:grid-cols-2{{/if}} sm:divide-y-2 md:divide-y-0 md:divide-x-2 p-3 my-6">
       {{> polls}}
-      {{> pollsAdmin}}
+      {{#if isAdmin}}
+        {{> pollsAdmin}}
+      {{/if}}
       </div>
     {{else}}
       {{> login}}

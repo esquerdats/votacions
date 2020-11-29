@@ -2,6 +2,7 @@
 - If admin
   - Create polls - by default they are closed
   - Open/Close polls
+  - See poll results
 - If normal user
   - See open polls
     - Vote once per poll

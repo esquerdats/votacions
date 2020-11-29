@@ -2,7 +2,7 @@
   "name": "votacions",
   "private": true,
   "scripts": {
-    "start": "meteor run --settings development.json",
+    "start": "meteor run --settings settings.json",
     "test": "meteor test --once --driver-package meteortesting:mocha"
   },
   "dependencies": {
@@ -17,5 +17,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "postcss-load-config": "^2.1.2"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }

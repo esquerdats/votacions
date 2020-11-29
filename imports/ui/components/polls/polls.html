@@ -1,13 +1,13 @@
 <template name="polls">
   <div class="flex flex-col items-center p-4">
     {{#if hasPolls}}
-      <h2 class="text-2xl font-bold mt-4 mb-2">Votacions obertes:</h2>
+      <h2 class="text-2xl font-bold mt-4 mb-2 text-center">Votacions obertes:</h2>
       {{#each polls}}
         <div class="flex flex-col items-center self-center my-4">
-          <span class="text-xl font-bold mt-3">{{question}}</span>
+          <span class="text-xl font-bold mt-3 text-center">{{question}}</span>
           {{#if hasVoted _id}}
             <p class="text-lg my-3">Has votat: {{vote _id}}</p>
-            <button class="remove-vote bg-gray-300 hover:bg-gray-400 text-white font-bold py-2 px-6 rounded">Eliminar vot</button>
+            <button class="remove-vote bg-gray-100 hover:bg-gray-200 text-gray-600 text-opacity-60 font-bold py-2 px-6 rounded">Eliminar vot</button>
           {{else}}
             <div class="flex my-3">
               {{#each option in options}}
@@ -18,7 +18,7 @@
         </div>
       {{/each}}
     {{else}}
-      <h2 class="text-2xl font-bold my-4">Ara mateix no hi ha cap votació oberta.</h2>
+      <h2 class="text-2xl font-bold my-4 text-center">Ara mateix no hi ha cap votació oberta.</h2>
     {{/if}}
   </div>
 </template>

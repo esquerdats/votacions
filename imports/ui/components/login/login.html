@@ -1,5 +1,56 @@
 <template name="login">
-  <div>
-    {{> loginButtons}}
+  <div class="flex flex-row justify-center">
+    <div class="flex flex-col max-w-lg px-3 items-center">
+      <h1 class="text-3xl font-bold self-center text-center">
+        Votacions AGO 04/12/20
+      </h1>
+      <span class="font-medium self-center text-center">
+        Colla Castellera de l'Esquerra de l'Eixample
+      </span>
+      <h2 class="text-xl font-bold mt-5 mb-2 text-center">Com puc votar?</h2>
+      <p class="mb-5 text-md text-center">Per poder votar primer hauràs de crear un compte fent servir el correu electrònic on has rebut aquest enllaç. Si és un correu de Google pots fer-ho molt ràpidament fent clic al botó que apareix a sota. Sinó, pots entrar amb correu i contrasenya.</p>
+      <div class="self-center">
+        <div class="rounded-t mb-0 px-6 py-2">
+          <div class="btn-wrapper text-center">
+            <button
+              id="login-google"
+              class="bg-white active:bg-gray-100 text-gray-800 px-5 py-3 rounded outline-none focus:outline-none shadow hover:shadow-md inline-flex items-center font-bold text-s"
+              type="button" style="transition: all 0.15s ease 0s;">
+                <img alt="Google" class="w-5 mr-3" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                Inicia sessió amb Google
+            </button>
+          </div>
+        </div>
+        <div class="px-4 py-1">
+          <div class="text-gray-500 text-center mb-4 font-bold text-lg"><small>O entra amb correu i contrasenya:</small></div>
+          <form id="login">
+            <div class="relative w-full my-5">
+              <label class="block uppercase text-gray-700 text-xs font-bold my-3" for="grid-password">Correu electrònic</label>
+              <input id="email" type="email" required
+                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                placeholder="Email" />
+            </div>
+            <div class="relative w-full my-5">
+              <label class="block uppercase text-gray-700 text-xs font-bold my-3" for="grid-password">Contrasenya</label>
+              <input id="password" type="password" required
+                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                placeholder="Password" />
+            </div>
+            <input
+              class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none w-full cursor-pointer"
+              type="submit" value="Iniciar sessió" />
+          </form>
+          <button
+            id="signup"
+            class="bg-blue-400 text-white active:bg-blue-500 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none my-4 w-full"
+            type="button" style="transition: all 0.15s ease 0s;">
+            Crear un nou compte
+          </button>
+          <div class="flex flex-col items-center my-2">
+            <button id="forgot-password" class="text-gray-400">Has oblidat la contrasenya?</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
