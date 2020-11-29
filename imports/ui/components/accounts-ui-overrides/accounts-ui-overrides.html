@@ -1,0 +1,52 @@
+<template name="_justVerifiedEmailDialogOverride">
+  {{#if visible}}
+  <div class="accounts-dialog accounts-centered-dialog">
+    Compte verificat!
+    Has iniciat sessió automàticament com a {{displayName}}.
+    <div class="login-button" id="just-verified-dismiss-button">D'acord</div>
+  </div>
+  {{/if}}
+</template>
+
+<template name="_resetPasswordDialogOverride">
+  {{#if inResetPasswordFlow}}
+  <div class="hide-background"></div>
+
+  <form class="accounts-dialog accounts-centered-dialog">
+    <label id="reset-password-new-password-label" for="reset-password-new-password">
+      Nova contrasenya
+    </label>
+
+    <div class="reset-password-new-password-wrapper">
+      <input id="reset-password-new-password" type="password" autocomplete="new-password" />
+    </div>
+
+    {{> _loginButtonsMessages}}
+
+    <div class="login-button login-button-form-submit" id="login-buttons-reset-password-button">
+      Canviar contrasenya
+    </div>
+
+    <a class="accounts-close" id="login-buttons-cancel-reset-password">&times;</a>
+  </form>
+  {{/if}}
+</template>
+
+<template name="_justResetPasswordDialogOverride">
+  {{#if visible}}
+  <div class="accounts-dialog accounts-centered-dialog">
+    Contrasenya restablerta.
+    Has iniciat sessió automàticament com a {{displayName}}.
+    <div class="login-button" id="just-verified-dismiss-button">D'acord</div>
+  </div>
+  {{/if}}
+</template>
+
+<template name="_loginButtonsMessagesDialogOverride">
+  {{#if visible}}
+  <div class="accounts-dialog accounts-centered-dialog" id="login-buttons-message-dialog">
+    {{> _loginButtonsMessages}}
+    <div class="login-button" id="messages-dialog-dismiss-button">D'acord</div>
+  </div>
+  {{/if}}
+</template>

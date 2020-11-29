@@ -29,6 +29,7 @@ accounts-ui-unstyled
 service-configuration
 email
 hexsprite:postcss
-accounts-ui
 google-config-ui
 accounts-base
+aldeed:template-extension
+accounts-ui

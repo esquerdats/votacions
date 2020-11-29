@@ -43,7 +43,6 @@ Meteor.startup(function () {
   });
   Accounts.validateLoginAttempt(({ type, user }) => {
     if (type === 'password' && user) {
-      console.log(user);
       if (!user.emails[0].verified) {
         throw new Meteor.Error("verify_email", "Si us plau verifica el teu compte fent clic al link que t'hem enviat al correu electrònic.")
       }
