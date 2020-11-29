@@ -1,44 +1,20 @@
-// Fill the DB with example data on startup
-
 import { Meteor } from 'meteor/meteor';
-import { Links } from '../../api/links/links.js';
+import { Polls } from '../../api/polls/polls.js';
 
 Meteor.startup(() => {
-  ServiceConfiguration.configurations.upsert({
-    service: "google"
-  }, {
-    $set: {
-      appId: Meteor.settings.google.appId,
-      secret: Meteor.settings.google.secret,
-      loginStyle: "popup"
-    }
-  });
-
-  // if the Links collection is empty
-  if (Links.find().count() === 0) {
+  if (Polls.find().count() === 0) {
     const data = [
       {
-        title: 'Do the Tutorial',
-        url: 'https://www.meteor.com/try',
-        createdAt: new Date(),
+        question: 'Acceptes la mesa?',
+        open: true,
+        options: ['Sí', 'No']
       },
       {
-        title: 'Follow the Guide',
-        url: 'http://guide.meteor.com',
-        createdAt: new Date(),
-      },
-      {
-        title: 'Read the Docs',
-        url: 'https://docs.meteor.com',
-        createdAt: new Date(),
-      },
-      {
-        title: 'Discussions',
-        url: 'https://forums.meteor.com',
-        createdAt: new Date(),
+        question: 'Què et semblen els menhirs?',
+        open: false,
+        options: ['Bé', 'Molt bé', 'Genial']
       },
     ];
-
-    data.forEach(link => Links.insert(link));
+    data.forEach(poll => Polls.insert(poll));
   }
 });

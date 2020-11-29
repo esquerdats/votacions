@@ -1,5 +1,18 @@
-<template name="App_home">
-  {{> loginButtons}}
-  {{> hello}}
-  {{> info}}
+<template name="home">
+  <div class="container py-6 flex flex-col content-center">
+    {{#if currentUser}}
+      <h1 class="text-3xl font-bold self-center">
+        Votacions AGO 04/12/20
+      </h1>
+      <span class="font-medium self-center">
+        Colla Castellera de l'Esquerra de l'Eixample
+      </span>
+      <div class="grid grid-cols-2 divide-x-2 p-3 my-6">
+      {{> polls}}
+      {{> pollsAdmin}}
+      </div>
+    {{else}}
+      {{> login}}
+    {{/if}}
+  </div>
 </template>

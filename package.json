@@ -1,5 +1,5 @@
 {
-  "name": "full",
+  "name": "votacions",
   "private": true,
   "scripts": {
     "start": "meteor run --settings development.json",
@@ -7,10 +7,15 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.11.2",
+    "autoprefixer": "^9.8.6",
+    "bcrypt": "^5.0.0",
     "jquery": "^3.5.1",
-    "meteor-node-stubs": "^1.0.1"
+    "meteor-node-stubs": "^1.0.1",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1"
   },
   "devDependencies": {
-    "chai": "^4.2.0"
+    "chai": "^4.2.0",
+    "postcss-load-config": "^2.1.2"
   }
 }

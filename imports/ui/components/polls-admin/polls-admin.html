@@ -1,0 +1,14 @@
+<template name="pollsAdmin">
+  <div class="flex flex-col items-center p-4">
+    <h2 class="text-2xl font-bold mt-4 mb-2">Admin</h2>
+    {{#each polls}}
+      <div class="flex flex-col items-center self-center my-4">
+        <span class="text-xl font-bold mt-3">{{question}}</span>
+        <p class="text-lg my-3">Estat: {{#if open}}Oberta{{else}}Tancada{{/if}}</p>
+        <button class="toggle bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-6 mr-2 rounded">
+          {{#if open}}Tancar{{else}}Obrir{{/if}}
+        </button>
+      </div>
+    {{/each}}
+  </div>
+</template>
