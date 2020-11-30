@@ -1,9 +1,9 @@
-- Login with Google
+- [x] Login with Google
 - If admin
-  - Create polls - by default they are closed
-  - Open/Close polls
-  - See poll results
+  - [ ] Create polls - by default they are closed
+  - [x] Open/Close polls
+  - [x] See poll results
 - If normal user
-  - See open polls
-    - Vote once per poll
-    - Be able to change vote
+  - [x] See open polls
+    - [x] Vote once per poll
+    - [x] Be able to change vote
