@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run --settings settings.json",
+    "build": "meteor build --server-only ../new_package && mv ../new_package/*.tar.gz package.tar.gz",
     "test": "meteor test --once --driver-package meteortesting:mocha"
   },
   "dependencies": {
