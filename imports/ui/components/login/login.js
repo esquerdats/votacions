@@ -4,7 +4,7 @@ import './login.html';
 Template.login.events({
   'click #login-google': function() {
     Meteor.loginWithGoogle(function(error) {
-      if (error) {
+      if (error && error.reason) {
         alert(error.reason);
       }
     });
