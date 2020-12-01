@@ -5,10 +5,19 @@ Accounts.emailTemplates.from = "Esquerdats <contacte@esquerdats.cat>";
 
 Accounts.emailTemplates.verifyEmail = {
   subject() {
-    return "AGO 04/12/20 Confirma el teu compte";
+    return "Confirma el teu compte";
   },
   text(user, url) {
-    return `Verifica el teu correu fent clic en el següent enllaç: ${url}`;
+    return `Hola,\n\nSi us plau confirma el teu compte fent clic en el següent enllaç:\n\n${url}\n\nGràcies\n\nColla Castellera de l'Esquerra de l'Eixample`;
+  },
+};
+
+Accounts.emailTemplates.resetPassword = {
+  subject() {
+    return "Restableix la teva contrasenya";
+  },
+  text(user, url) {
+    return `Hola,\n\nPots restablir la teva contrasenya fent clic al següent enllaç:\n\n${url}\n\nGràcies\n\nColla Castellera de l'Esquerra de l'Eixample`;
   },
 };
 
@@ -44,7 +53,7 @@ Meteor.startup(function () {
   Accounts.validateLoginAttempt(({ type, user }) => {
     if (type === 'password' && user) {
       if (!user.emails[0].verified) {
-        throw new Meteor.Error("verify_email", "Si us plau verifica el teu compte fent clic al link que t'hem enviat al correu electrònic.")
+        throw new Meteor.Error("verify_email", "Si us plau verifica el teu compte fent clic a l'enllaç que t'hem enviat al correu electrònic.")
       }
     }
     return true;
