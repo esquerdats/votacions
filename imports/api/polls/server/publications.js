@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Polls } from '../polls.js';
 
 Meteor.publish('polls.all', function () {
-  if (!Meteor.user().isAdmin) {
+  if (!Meteor.user()?.isAdmin) {
     return [];
   }
   return Polls.find();

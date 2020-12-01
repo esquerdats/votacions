@@ -18,6 +18,6 @@ Template.home.events({
 
 Template.home.helpers({
   isAdmin() {
-    return !!Meteor.user().isAdmin;
+    return !!Meteor.user()?.isAdmin;
   }
 })

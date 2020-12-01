@@ -7,7 +7,7 @@ Meteor.methods({
     check(question, String);
     check(options, [String]);
 
-    if (!Meteor.user().admin) {
+    if (!Meteor.user()?.admin) {
       throw new Meteor.Error('401', 'Has de ser admin per crear votacions.');
     }
 
