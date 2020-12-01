@@ -47,9 +47,15 @@ Meteor.startup(function () {
           "Compte enllaçat correctament, si us plau torna a iniciar sessió."
         );
       }
+      // add email address as verified
+      user.emails = [{
+        address: google.email,
+        verified: true,
+      }];
     }
     return user;
   });
+
   Accounts.validateLoginAttempt(({ type, user }) => {
     if (type === 'password' && user) {
       if (!user.emails[0].verified) {
